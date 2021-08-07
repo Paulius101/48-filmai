@@ -43,12 +43,12 @@ kauke.sellTickets(0, 3);
 kauke.updateMoviePrice(2, 8);
 // // You can watch "Mano batai buvo 2" movie for 8 EUR, now!
 
-// kauke.sellTickets(2, 1);
+kauke.sellTickets(2, 1);
 
-// kauke.removeMovie(1);
+kauke.removeMovie(1);
 // // No more "Kaspinelis" :(
 
-// kauke.sellTickets(1, 4);
+kauke.sellTickets(1, 4);
 // // Sorry, you can no longer buy tickets to movie "Kaspinelis".
 
 // kauke.profit();
