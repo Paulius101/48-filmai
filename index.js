@@ -51,7 +51,7 @@ kauke.removeMovie(1);
 kauke.sellTickets(1, 4);
 // // Sorry, you can no longer buy tickets to movie "Kaspinelis".
 
-// kauke.profit();
+kauke.profit();
 // // ===============
 // // "Kauke" profit:
 // // ===============

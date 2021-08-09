@@ -15,7 +15,8 @@ class Cinema {
             movieName: movieName,
             moviePrice: moviePrice,
             ticketPrice: ticketPrice,
-            profit: 0
+            profit: 0,
+            available: true
         })
         // console.log(this.movies);
         console.log(`You can watch "${movieName}" movie for ${ticketPrice} EUR, now!`);
@@ -23,8 +24,12 @@ class Cinema {
 
 
     sellTickets(movieIndex, ticketsCount) {
-        if (this.movies[movieIndex])
+        if (this.movies[movieIndex].available === true) {
             this.movies[movieIndex].profit += this.movies[movieIndex].ticketPrice * ticketsCount;
+        }
+        else {
+            console.log(`Sorry, you can no longer buy tickets to movie "${this.movies[movieIndex].movieName}".`);
+        }
     }
 
     profit() {
@@ -41,18 +46,14 @@ class Cinema {
     }
 
     updateMoviePrice(index, ticketPrice) {
+        this.movies[index].ticketPrice = ticketPrice;
         console.log(`You can watch "${this.movies[index].movieName}" movie for ${ticketPrice} EUR, now!`);
     }
 
     removeMovie(index) {
-        let newList = [];
-        for (let i = 0; i < this.movies.length; i++) {
-            if (index === this.movies[index]) {
-                newList.push(this.movies[i])
-            }
-        }
-        newList = this.movies;
-        console.log(`No more "${this.movies[index].movieName}" :(`);
+        this.movies[index].available = false;
+        console.log(this.movies);
+        console.log(`No more "${this.movies[index].movieName} " :(`);
     }
 
 
